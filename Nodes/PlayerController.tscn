@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://dyi0qhaygd36v"]
+
+[ext_resource type="Script" path="res://Nodes/PlayerController.cs" id="1_qkdcs"]
+[ext_resource type="Texture2D" uid="uid://crwx0vi3gwkl" path="res://Sprites/apocalypse.png" id="2_jt5oe"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wikab"]
+atlas = ExtResource("2_jt5oe")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cga17"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wikab")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_652on"]
+size = Vector2(12, 16)
+
+[node name="PlayerController" type="CharacterBody2D"]
+script = ExtResource("1_qkdcs")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_cga17")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_652on")
