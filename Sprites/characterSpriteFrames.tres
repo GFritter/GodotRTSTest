@@ -1,3 +1,25 @@
-[gd_resource type="SpriteFrames" format=3 uid="uid://bfwo7u7stdd31"]
+[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://bfwo7u7stdd31"]
+
+[ext_resource type="Texture2D" uid="uid://crwx0vi3gwkl" path="res://Sprites/apocalypse.png" id="1_q3xhk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tqgco"]
+atlas = ExtResource("1_q3xhk")
+region = Rect2(48, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ojpmv"]
+atlas = ExtResource("1_q3xhk")
+region = Rect2(48, 64, 16, 16)
 
 [resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tqgco")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ojpmv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

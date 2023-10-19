@@ -1,3 +1,19 @@
-[gd_scene format=3 uid="uid://q60jyguybn17"]
+[gd_scene load_steps=4 format=3 uid="uid://q60jyguybn17"]
+
+[ext_resource type="SpriteFrames" uid="uid://bfwo7u7stdd31" path="res://Sprites/characterSpriteFrames.tres" id="1_7qod7"]
+[ext_resource type="Script" path="res://Nodes/BasicEntity.cs" id="2_q4ild"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n5fsu"]
+size = Vector2(13, 16)
 
 [node name="BasicEntity" type="AnimatedSprite2D"]
+sprite_frames = ExtResource("1_7qod7")
+script = ExtResource("2_q4ild")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="NavigationAgent2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationAgent2D/Area2D"]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_n5fsu")
